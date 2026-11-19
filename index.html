@@ -244,15 +244,15 @@
 let currentStep = 0;
 function renderStep() {
 const item = checklist[currentStep];
-document.getElementById('step-counter').innerText = Шаг ${currentStep + 1} из ${checklist.length};
+document.getElementById('step-counter').innerText = 'Шаг ' + (currentStep + 1) + ' из ' + checklist.length;
 const percent = Math.round((currentStep / checklist.length) * 100);
-document.getElementById('percent-counter').innerText = ${percent}%;
-document.getElementById('progress-fill').style.width = ${percent}%;
+document.getElementById('percent-counter').innerText = percent + '%';
+document.getElementById('progress-fill').style.width = percent + '%';
 document.getElementById('category').innerText = item.cat;
 document.getElementById('step-text').innerText = item.text;
 const subList = document.getElementById('sub-checks');
 if (item.subs) {
-subList.innerHTML = item.subs.map(s => <li>${s}</li>).join('');
+subList.innerHTML = item.subs.map(function(s) { return '<li>' + s + '</li>'; }).join('');
 subList.style.display = 'block';
 } else {
 subList.style.display = 'none';
