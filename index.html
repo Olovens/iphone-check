@@ -265,9 +265,6 @@ const noteBox = document.getElementById('note-box');
 noteBox.style.display = noteBox.style.display === 'none' ? 'block' : 'none';
 }
 function nextStep() {
-if (tg.HapticFeedback) {
-tg.HapticFeedback.impactOccurred('light');
-}
 if (currentStep < checklist.length - 1) {
 currentStep++;
 renderStep();
@@ -282,9 +279,6 @@ renderStep();
 }
 }
 function showFinish() {
-if (tg.HapticFeedback) {
-tg.HapticFeedback.notificationOccurred('success');
-}
 document.getElementById('header').style.display = 'none';
 document.getElementById('card').style.display = 'none';
 document.getElementById('controls').style.display = 'none';
